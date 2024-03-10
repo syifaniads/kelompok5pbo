@@ -1,5 +1,4 @@
-package projectTravel;
-
+//benul gak yuh
 public class bus extends kendaraan{
 
     private String pabrikan;
