@@ -3,8 +3,16 @@ public class user {
     String nama;
     String noHP;
     String alamat;
-
-    user member = new user();
+    public void setNama(String s) {
+        this.nama = s;
+    }
+    public void setNoHP(String s) {
+        this.noHP = s;
+    }
+    public void setAlamat(String s) {
+        this.alamat = s;
+    }
+//    user member = new user();
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
         System.out.print("=".repeat(52));
@@ -21,17 +29,8 @@ public class user {
         scanner.nextLine();
         switch(choice){
             case 1:
-                System.out.print("Masukkan Nama: ");
-                String nama = scanner.nextLine();
-                System.out.print("Masukkan Nomor Telepon: ");
-                String noTelp = scanner.nextLine();
-                System.out.print("Masukan Alamat: ");
-                String alamat = scanner.nextLine();
-                System.out.print("Masukkan username yang diinginkan: ");
-                String username = scanner.nextLine();
-                System.out.print("Masukkan password yang sulit: ");
-                String password = scanner.nextLine();
-                System.out.println("SELAMAT ANDA BERHASIL MENJADI MEMBER!");
+                Member member = new Member();
+                member.jadiMember();
                 System.out.print("=".repeat(52));
                 System.out.println("\nLANJUTKAN PESANAN?");
                 System.out.println("1. Ya");
@@ -40,14 +39,22 @@ public class user {
                 int pilihan1 = scanner.nextInt();
                 scanner.nextLine();
                 if(pilihan1==1){
-                    System.out.print("Tanggal awal sewa (dd-mm-yyyy): ");
-                    String tanggalAwal = scanner.nextLine();
-                    System.out.print("Tanggal akhir sewa (dd-mm-yyyy): ");
-                    String tanggalAkhir = scanner.nextLine();
-                    System.out.print("Durasi penyewaan (dalam hari): ");
-                    int durasi = scanner.nextInt();
-                    scanner.nextLine();
-                    // panggil class nota
+                    Member pesanMember = new Member();
+                    pesanMember.buatPesanan();
+                    System.out.println("Apakah Pesanan Sudah Tepat?");
+                    System.out.println("1. Ya");
+                    System.out.println("2. Tidak,Saya Ingin Mengedit Pesanan");
+                    System.out.println("3. Batalkan Pesanan");
+                    System.out.print("Masukkan pilihan: ");
+                    int pilihan2 = scanner.nextInt();
+                    if(pilihan2 == 2){
+                        pesanMember.editPesanan();
+                        System.out.println("Pesanan berhasil diedit");
+                    }
+                    if(pilihan2 == 3){
+                        pesanMember.batalkanPesanan();
+                        System.out.println("Pesanan berhadil dibatalkan");
+                    }
                 }
                 else{
                     System.out.println("Terimakasih!");
@@ -70,13 +77,8 @@ public class user {
                 int pilihan2 = scanner.nextInt();
                 scanner.nextLine();
                 if(pilihan2==1){
-                    System.out.print("Tanggal awal sewa (dd-mm-yyyy): ");
-                    String tanggalAwal = scanner.nextLine();
-                    System.out.print("Tanggal akhir sewa (dd-mm-yyyy): ");
-                    String tanggalAkhir = scanner.nextLine();
-                    System.out.print("Durasi penyewaan (dalam hari): ");
-                    int durasi = scanner.nextInt();
-                    scanner.nextLine();
+                    NonMember pesanNonMember = new NonMember();
+                    pesanNonMember.buatPesanan();
                     // panggil class nota
                 }
                 else{
@@ -85,22 +87,17 @@ public class user {
                 }
                 break;
             case 3:
-                System.out.print("Masukkan nama: ");
-                String namaPenyewa = scanner.nextLine();
-                System.out.print("Masukkan Nomor Telepon: ");
-                String noTelpPenyewa = scanner.nextLine();
-                System.out.print("Masukkan Alamat: ");
-                String alamatPenyewa = scanner.nextLine();
+                Penyewa pesanSewa = new Penyewa();
+                pesanSewa.menyewa();
+                System.out.println("SELAMAT ANDA BERHASIL MENJADI PENYEWA!");
+                System.out.print("\n"+"=".repeat(52));
+                System.out.println("LANJUTKAN PESANAN?");
+                // if else?
 //                System.out.print("Masukkan Nomor Polisi Kendaraan: ");
 //                String noPolPenyewa = scanner.nextLine();
 //                System.out.print("Masukkan Jenis Kendaraan: ");
 //                String jenisVehiclePenyewa = scanner.nextLine();
                 // ini mereka yang input atau dari kita???
-
-                System.out.println("SELAMAT ANDA BERHASIL MENJADI PENYEWA!");
-                System.out.print("\n"+"=".repeat(52));
-                System.out.println("LANJUTKAN PESANAN?");
-                // if else?
                 break;
             default:
                 System.out.println("Pilihan tidak valid.");
