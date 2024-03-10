@@ -1,3 +1,4 @@
+package studiKasus1;
 import java.util.*;
 public class Member extends user {
     Scanner scanner = new Scanner(System.in);
@@ -46,7 +47,7 @@ public class Member extends user {
     }
     public void buatPesanan() {
         Member member = new Member();
-        System.out.println("Buat Pesanan:");
+        System.out.println("================ Buat Pesanan ================");
         System.out.print("Tanggal awal sewa (dd-mm-yyyy): ");
         member.setTanggalAwalSewa(scanner.nextLine());
         System.out.print("Tanggal akhir sewa (dd-mm-yyyy): ");
