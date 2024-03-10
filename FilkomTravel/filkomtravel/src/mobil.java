@@ -25,7 +25,6 @@ public class mobil extends kendaraan{
 
     @Override
     public void informasiKendaraan() {
-        mobil mobil = new mobil("MObil", "N 1234 AAA", 5 , 1500000, true, "Mercedes-Benz", "E-Class", true);
         super.informasiKendaraan();
         System.out.println("AC: " + (AC? "Tersedia" : "Tidak tersedia"));
     }
