@@ -26,5 +26,6 @@ public class motor extends kendaraan{
     @Override
     public void informasiKendaraan() {
         super.informasiKendaraan();
+        System.out.println("========================================");
     }
 }
