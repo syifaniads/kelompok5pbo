@@ -1,16 +1,17 @@
 import java.util.*;
 import java.text.SimpleDateFormat;
-public class paketWisata {
+public class paketTravel {
     private String namaPaket;
     private int lamaPerjalanan;
     private double hargaPaket;
     private List<Date> daftarTanggalKeberangkatan;
-    public paketWisata(String namaPaket, int lamaPerjalanan, double hargaPaket) {
+    public paketTravel(String namaPaket, int lamaPerjalanan, double hargaPaket) {
         this.namaPaket = namaPaket;
         this.lamaPerjalanan = lamaPerjalanan;
         this.hargaPaket = hargaPaket;
         this.daftarTanggalKeberangkatan = new ArrayList<>();
     }
+
     public void addTanggalKeberangkatan(Date tanggal) {
         daftarTanggalKeberangkatan.add(tanggal);
     }
@@ -30,8 +31,11 @@ public class paketWisata {
     public double getHargaPaket() {
         return hargaPaket;
     }
-    public void printPaketWisata(){
-        paketWisata paketWisata = new paketWisata("Bromo", 3, 1000000);
+
+
+    // Contoh penggunaan
+    public void printPaketTravel(){
+        paketTravel paketWisata = new paketTravel("Bromo", 3, 1000000);
         paketWisata.addTanggalKeberangkatan(new Date());
         paketWisata.addTanggalKeberangkatan(new Date());
         paketWisata.addTanggalKeberangkatan(new Date());
