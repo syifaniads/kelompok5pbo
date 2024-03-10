@@ -1,4 +1,5 @@
 import java.util.*;
+import java.text.SimpleDateFormat;
 public class paketWisata {
     private String namaPaket;
     private int lamaPerjalanan;
@@ -10,7 +11,6 @@ public class paketWisata {
         this.hargaPaket = hargaPaket;
         this.daftarTanggalKeberangkatan = new ArrayList<>();
     }
-
     public void addTanggalKeberangkatan(Date tanggal) {
         daftarTanggalKeberangkatan.add(tanggal);
     }
@@ -30,32 +30,19 @@ public class paketWisata {
     public double getHargaPaket() {
         return hargaPaket;
     }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Nama Paket: ").append(namaPaket).append("\n");
-        sb.append("Lama Perjalanan: ").append(lamaPerjalanan).append(" hari").append("\n");
-        sb.append("Harga Paket: Rp").append(String.format("%.2f", hargaPaket)).append("\n");
-        sb.append("Daftar Tanggal Keberangkatan:").append("\n");
-        for (Date tanggal : daftarTanggalKeberangkatan) {
-            sb.append("- ").append(tanggal).append("\n");
-        }
-        return sb.toString();
-    }
-
-    // Contoh penggunaan
-    public static void main(String[] args) {
+    public void printPaketWisata(){
         paketWisata paketWisata = new paketWisata("Bromo", 3, 1000000);
-        paketWisata.addTanggalKeberangkatan(new Date(2024, 3, 10));
-        paketWisata.addTanggalKeberangkatan(new Date(2024, 4, 5));
-        paketWisata.addTanggalKeberangkatan(new Date(2024, 5, 1));
+        paketWisata.addTanggalKeberangkatan(new Date());
+        paketWisata.addTanggalKeberangkatan(new Date());
+        paketWisata.addTanggalKeberangkatan(new Date());
 
-        System.out.println(paketWisata);
-
-        List<Date> daftarTanggal = paketWisata.cekJadwalKeberangkatan();
-//        for (Date tanggal : daftarTanggal) {
-//            System.out.println(tanggal);
-//        }
+        System.out.println("Nama Paket: " + paketWisata.getNamaPaket());
+        System.out.println("Lama Perjalanan: " + paketWisata.getLamaPerjalanan() + " hari");
+        System.out.printf("%s%.0f\n","Harga Paket: Rp", paketWisata.getHargaPaket());
+        System.out.println("Daftar Tanggal Keberangkatan:");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        for (Date tanggal : paketWisata.cekJadwalKeberangkatan()) {
+            System.out.println("- " + formatter.format(tanggal) + " WIB");
+        }
     }
 }
