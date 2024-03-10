@@ -27,5 +27,6 @@ public class mobil extends kendaraan{
     public void informasiKendaraan() {
         super.informasiKendaraan();
         System.out.println("AC: " + (AC? "Tersedia" : "Tidak tersedia"));
+        System.out.println("========================================");
     }
 }
