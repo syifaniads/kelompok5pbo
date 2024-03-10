@@ -1,3 +1,4 @@
+package studiKasus1;
 import java.util.*;
 public class NonMember extends user {
     Scanner scanner = new Scanner(System.in);
@@ -29,22 +30,18 @@ public class NonMember extends user {
     public String getPassword() {
         return this.password;
     }
-    public void jadiMember(){
-        Member member = new Member();
+    public void daftarNonMember(){
+        NonMember member = new NonMember();
         System.out.print("Masukkan Nama: ");
         member.setNama(scanner.nextLine());
         System.out.print("Masukkan Nomor Telepon: ");
         member.setNoHP(scanner.nextLine());
         System.out.print("Masukan Alamat: ");
         member.setAlamat(scanner.nextLine());
-        System.out.print("Masukkan username yang diinginkan: ");
-        member.setUsername(scanner.nextLine());
-        System.out.print("Masukkan password yang sulit: ");
-        member.setUsername(scanner.nextLine());
-        System.out.println("SELAMAT ANDA BERHASIL MENJADI MEMBER!");
+        System.out.println("SELAMAT ANDA BERHASIL MMENDAFTAR!");
     }
     public void buatPesanan() {
-        Member member = new Member();
+        NonMember member = new NonMember();
         System.out.println("Buat Pesanan:");
         System.out.print("Tanggal awal sewa (dd-mm-yyyy): ");
         member.setTanggalAwalSewa(scanner.nextLine());
@@ -56,7 +53,7 @@ public class NonMember extends user {
     }
 
     public void editPesanan() {
-        Member member = new Member();
+        NonMember member = new NonMember();
         System.out.println("Edit Pesanan:");
         System.out.print("Tanggal awal sewa (dd-mm-yyyy): ");
         member.setTanggalAwalSewa(scanner.nextLine());
