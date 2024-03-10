@@ -1,5 +1,4 @@
-package projectTravel;
-
+//benul gak yuh
 public class mobil extends kendaraan{
     private String pabrikan;
     private String type;
