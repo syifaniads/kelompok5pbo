@@ -26,8 +26,8 @@ public class bus extends kendaraan{
 
     @Override
     public void informasiKendaraan() {
-        bus bus = new bus("Bus", "N 1234 AAA", 40 , 35000000, true, "Scania", "K-Series", true);
         super.informasiKendaraan();
         System.out.println("AC: " + (AC? "Tersedia" : "Tidak tersedia"));
+        System.out.println("========================================");
     }
 }
