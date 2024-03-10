@@ -25,7 +25,6 @@ public class motor extends kendaraan{
 
     @Override
     public void informasiKendaraan() {
-        motor motor = new motor("Motor", "N 1234 AAA", 2 , 125000, true, "Honda", "Vario");
         super.informasiKendaraan();
     }
 }
