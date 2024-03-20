@@ -1,3 +1,5 @@
+package studiKasus1;
+
 class nota extends User{
     private double totalBiaya;
     private boolean member;
