@@ -1,5 +1,6 @@
 //benul gak yuh
 class Mobil {
+    private String jenis;
     private String merek;
     private String noPlat;
     private String type;
@@ -8,7 +9,8 @@ class Mobil {
     private boolean statusKendaraan;
     private double hargaSewa;
 
-    public void informasiMobil(String merek, String noPlat, String type, boolean AC, int kapasitas, boolean statusKendaraan, double hargaSewa) {
+    public void informasiMobil(String jenis, String merek, String noPlat, String type, boolean AC, int kapasitas, boolean statusKendaraan, double hargaSewa) {
+        this.jenis = jenis;
         this.merek = merek;
         this.noPlat = noPlat;
         this.type = type;
