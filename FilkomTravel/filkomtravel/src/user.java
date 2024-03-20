@@ -35,7 +35,6 @@ public class User {
         this.alamat = s;
     }
     public void daftar(){
-        User user = new User();
         System.out.print("Masukkan Nama: ");
         user.setNama(scanner.nextLine());
         System.out.print("Masukkan Nomor Telepon: ");
@@ -44,7 +43,6 @@ public class User {
         user.setAlamat(scanner.nextLine());
     }
     public void buatPesanan() {
-        User user = new User();
         System.out.println("================ Buat Pesanan ================");
         System.out.print("Tanggal awal sewa (dd-mm-yyyy): ");
         user.setTanggalAwalSewa(scanner.nextLine());
@@ -56,7 +54,6 @@ public class User {
     }
 
     public void editPesanan() {
-        User user = new User();
         System.out.println("Edit Pesanan:");
         System.out.print("Tanggal awal sewa (dd-mm-yyyy): ");
         user.setTanggalAwalSewa(scanner.nextLine());
