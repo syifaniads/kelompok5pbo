@@ -1,32 +1,29 @@
 //benul gak yuh
-public class mobil extends kendaraan{
-    private String pabrikan;
+class Mobil {
+    private String merek;
+    private String noPlat;
     private String type;
     private boolean AC;
-    public mobil(String jenisKendaraan, String noPol, int kapasitas, double hargaSewa, boolean statusKendaraan, String pabrikan, String type, boolean AC) {
-        super(jenisKendaraan, noPol, kapasitas, hargaSewa, statusKendaraan);
-        this.AC = AC;
-        this.pabrikan = pabrikan;
+    private int kapasitas;
+    private boolean statusKendaraan;
+    private double hargaSewa;
+
+    public void informasiMobil(String merek, String noPlat, String type, boolean AC, int kapasitas, boolean statusKendaraan, double hargaSewa) {
+        this.merek = merek;
+        this.noPlat = noPlat;
         this.type = type;
-    }
-    public String getJenisKendaraan(){
-        return jenisKendaraan;
-    }
-    public String getNoPol(){
-        return noPol;
-    }
-    public int getKapasitas(){
-        return kapasitas;
-    }
+        this.AC = AC;
+        this.kapasitas = kapasitas;
+        this.statusKendaraan = statusKendaraan;
+        this.hargaSewa = hargaSewa;
 
-    public double getHargaSewa(){
-        return hargaSewa;
-    }
-
-    @Override
-    public void informasiKendaraan() {
-        super.informasiKendaraan();
-        System.out.println("AC: " + (AC? "Tersedia" : "Tidak tersedia"));
-        System.out.println("========================================");
+        System.out.println("=".repeat(52));
+        System.out.println("Merek: " + merek);
+        System.out.println("Plat Nomor: " + noPlat);
+        System.out.println("Kapasitas: " + kapasitas);
+        System.out.println("Harga sewa: " + hargaSewa);
+        System.out.println("Status kendaraan: " + (statusKendaraan ? "Tersedia" : "Tidak Tersedia"));
+        System.out.println("AC: " + (AC ? "Tersedia" : "Tidak tersedia"));
+        System.out.println("=".repeat(52));
     }
 }
